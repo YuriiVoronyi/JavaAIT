@@ -40,17 +40,6 @@ public class HomeWork_17 {
         Попросить объект класса собака перепрыгнуть все препятствия в массиве.
         Посчитать сколько препятствий из массива собака смогла преодолеть.
         */
-        Dog dog1 = new Dog("Barbos", 50);
-
-        for (int i = 0; i < 7; i++) {
-            dog1.training();
-        }
-
-        System.out.println("=============");
-        System.out.println("jumpHeight " + dog1.jumpHeight);
-        System.out.println("maxJumpHeight " + dog1.maxJumpHeight);
-
-        System.out.println("=========== Rax =============");
         Dog dog = new Dog("Rax", 150);
 
         System.out.println(dog.jumpHeight);
