@@ -2,7 +2,7 @@ package homework_20;
 import java.util.Arrays;
 public class RubberArrayV3 {
     private int[] array;
-    int cursor;
+    private int cursor;//Сделал приватной
     static final int MULTIPLIER = 2;
 
     public RubberArrayV3() { // конструктор

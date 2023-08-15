@@ -3,14 +3,15 @@ package homework_20;
 public class Dog {
     private String name;
     private int jumpHeight;
-    private int maxJumpHeight;
-    static int numberOfJumps;  //Поле для хранения количества прыжков
+    //private int maxJumpHeight;
+    final int maxJumpHeight;
+    private static int numberOfJumps;  //Поле для хранения количества прыжков
 
     static final int MULTIPLIER = 2;//Добавили константу для рассчета максимально возможной высоты прыжка
 
     static { numberOfJumps = 0; }  //Статический блок инициализации
 
-    static int getNumberOfJumps() {//Статический метод, возвращающий общее количество прыжков, сделанных всеми собаками
+    public static int getNumberOfJumps() {//Статический метод, возвращающий общее количество прыжков, сделанных всеми собаками
         return numberOfJumps;
     }
 
