@@ -37,6 +37,7 @@ public class Main21 {
         numberForSearch = 970;
         idx = ArraysUtil.binarySearch(testArray, numberForSearch);
         System.out.println("Индекс числа " + numberForSearch + " = " + idx);
+        System.out.println("====================== Дописать метод для выведения массива в консоль =============");
         ArraysUtil.printArray(testArray);
 
 
