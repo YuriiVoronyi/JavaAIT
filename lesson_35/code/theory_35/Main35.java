@@ -1,8 +1,6 @@
-package homework_34;
+package theory_35;
 
-import java.util.Arrays;
-
-public class Main34 {
+public class Main35 {
         /*
     Написать программу для бухгалтерии.
     Программа должна уметь:
@@ -33,52 +31,49 @@ public class Main34 {
      - по имени а если имена одинаковые, то по id
      */
         public static void main(String[] args) {
-            Company company;
-            Employee[] employees;//Массив сотрудников
+            Employee sm1 = new SalesManager(7,"Ben","White",80,100000,0.05);
+            Employee wm1 = new WageEmployee(1,"Jack","Red",30,12.5);
+            Employee sm2 = new SalesManager(3,"Ben","Brown",75,120000,0.05);
+            Employee wm2 = new WageEmployee(4,"Ann","Green",35,12.5);
+            Employee sm3 = new SalesManager(35,"Mary","Claw",85,110000,0.05);
+            Employee wm3 = new WageEmployee(2,"Peter","Abc",60,12);
 
-            company = new Company(10);//Создаем компанию на 10 человек
-            employees = new Employee[6];
+            System.out.println(sm1.calculateSalary());
+            System.out.println(wm1.calculateSalary());
 
-            employees[0] = new SalesManager(1000,"Alan","Brown",160,7000,0.1);
-            employees[1] = new SalesManager(1010,"Bob","Muller",160,5000,0.1);
-            employees[2] = new SalesManager(1020,"Alan","Wilson",160,6500,0.1);
-            employees[3] = new WageEmployee(1030,"Robert","Smith",150,14);
-            employees[4] = new WageEmployee(1040,"David","Hall",130,15);
-            employees[5] = new WageEmployee(1050,"William","Turner",140,16);
+            Company company = new Company(10);
+            company.addEmployee(sm1);
+            company.addEmployee(wm1);
+            company.addEmployee(sm2);
+            company.addEmployee(wm2);
+            company.addEmployee(sm3);
+            company.addEmployee(wm3);
 
-            for (int i = 0; i < employees.length; i++) {
-                company.addEmployee(employees[i]);//Добавляем сотрудников в компанию
-            }
-            System.out.println("====== Display of company ============");
             company.display();
-            System.out.println("\n======= Sort by last name ===========");
-            Arrays.sort(employees);
-            for (Employee employee: employees) {
-                System.out.println(employee);
-            }
-            System.out.println("\n======= Sort by name ===========");
-            Arrays.sort(employees, new EmployeeNameComparator());
-            for (Employee employee: employees) {
-                System.out.println(employee);
-            }
-            System.out.println("\n======= Sort by id ===========");
-            Arrays.sort(employees, new EmployeeIdComparator());
-            for (Employee employee: employees) {
-                System.out.println(employee);
-            }
-            System.out.println("\n======= Salary of employees ===========");
-            for (Employee employee: employees) {
-                System.out.println(employee + ", salary = " + employee.calculateSalary());
-            }
-            System.out.println("\n======= Add a new employee ===========");
-            Employee e = new SalesManager(1060,"Lisa","White",160,5000,0.1);
-            company.addEmployee(e);
+
+            System.out.println("------remove sm1-----------");
+            company.removeEmployee(sm1);
             company.display();
-            System.out.println("\n======= Delete an employee ===========");
-            company.removeEmployee(employees[1]);
+
+            company.addEmployee(sm1);
+
+            System.out.println("Total salary = " + company.sumSalary());
+
+            System.out.println("Employees sorted by second name:");
+            company.sortEmployees();
             company.display();
-            System.out.println("\n======= Delete an employee again===========");
-            company.removeEmployee(employees[5]);
+
+            System.out.println();
+            System.out.println();
+            System.out.println("Employees sorted by id:");
+            //  company.sortEmployeesById();
+            company.sortEmployeesByIdAnonym();
+            company.display();
+
+            System.out.println();
+            System.out.println();
+            System.out.println("Employees sorted by name and  id:");
+            company.sortEmployeesByNameThenId();
             company.display();
         }
 }
