@@ -18,6 +18,7 @@ public class Main40 {
         names.add("Dina");
         names.add("Bob");
         names.add("Lena");
+        System.out.println(names);
         HashSet<String> newNames = getNewName(names);
         System.out.println(newNames);
     }
