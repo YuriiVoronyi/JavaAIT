@@ -10,7 +10,7 @@ class DominantElementTest {
 
     @BeforeEach
     void setUp() {
-       DominantElement dominantElement = new DominantElement();
+       this.dominantElement = new DominantElement();
     }
 
     @Test
