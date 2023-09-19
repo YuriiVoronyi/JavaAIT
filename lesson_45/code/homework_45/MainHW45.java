@@ -32,7 +32,7 @@ public class MainHW45 {
             searchOfResult.merge(i,1,(oldValue,newValue) -> oldValue + newValue);
         }
         for (int key: searchOfResult.keySet()) {
-            if(searchOfResult.get(key) == 1)
+            if(searchOfResult.get(key) % 2 != 0)//Возвращаем не четное число
                 return key;
         }
         return -1;
