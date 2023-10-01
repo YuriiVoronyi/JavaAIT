@@ -1,2 +1,4 @@
-Hello World!
-Hello Java!
+Person{name='Pol', age=20}
+Person{name='Bob', age=34}
+Person{name='Adel', age=25}
+Person{name='Nika', age=18}
