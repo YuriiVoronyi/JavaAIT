@@ -40,6 +40,7 @@ public class MainHW59 {
     public void printByAgeFilter(List<Person> pers) {
         pers.stream()
                 .filter(Person -> Person.age > 17)
+                .map(Person::getAddress)
                 .forEach(System.out::println);
     }
 }

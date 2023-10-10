@@ -26,7 +26,9 @@ public class Person {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Person{");
-        sb.append("address=").append(address);
+        sb.append("name='").append(name).append('\'');
+        sb.append(", age=").append(age);
+        sb.append(", address=").append(address);
         sb.append('}');
         return sb.toString();
     }
