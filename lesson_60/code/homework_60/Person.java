@@ -26,7 +26,7 @@ public class Person {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("");
-        sb.append(name).append('\'');
+        sb.append(name);
         return sb.toString();
     }
 }
